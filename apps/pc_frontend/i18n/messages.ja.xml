@@ -1415,6 +1415,10 @@
         <source>Reset</source>
         <target>リセット</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>Information</source>
+        <target>インフォメーション</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
