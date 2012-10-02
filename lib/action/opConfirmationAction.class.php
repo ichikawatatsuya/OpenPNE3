@@ -27,8 +27,30 @@ class opConfirmationAction extends sfActions
   {
     $this->checkCategory();
 
+    $this->forwardIf($request->isSmartphone(), 'confirmation', 'smtList');
+
     $this->list = array();
 
+    $params = array('category' => $this->category, 'member' => $this->getUser()->getMember());
+    $event = new sfEvent($this, 'op_confirmation.list', $params);
+    $this->dispatcher->notifyUntil($event);
+
+    if ($event->isProcessed())
+    {
+      $list = (array)$event->getReturnValue();
+
+      $filterEvent = new sfEvent($this, 'op_confirmation.list_filter', $params);
+      $this->dispatcher->filter($filterEvent, $list);
+
+      $this->list = (array)$filterEvent->getReturnValue();
+    }
+
+    $this->form = new sfForm();
+  }
+
+  public function executeSmtList(sfWebRequest $request)
+  {
+    $this->list = array();
     $params = array('category' => $this->category, 'member' => $this->getUser()->getMember());
     $event = new sfEvent($this, 'op_confirmation.list', $params);
     $this->dispatcher->notifyUntil($event);

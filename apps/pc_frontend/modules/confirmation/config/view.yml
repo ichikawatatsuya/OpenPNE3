@@ -1,2 +1,6 @@
 listSuccess:
   layout: layoutB
+
+smtListSuccess:
+  layout: smtLayoutHome
+
