@@ -33,7 +33,28 @@ loginSuccess:
   layout: layoutA
 
 smtHomeSuccess:
+  javascripts: [jquery.min.js, jquery-ui.min.js, util]
   layout: smtLayoutHome
+  customize:
+    cautionAboutFriendPre:
+      template: [friend, cautionAboutFriendPre]
+      parts   : [information]
+      target  : [bodyBottom]
+    cautionAboutCommunityMemberPre:
+      template    : [community, cautionAboutCommunityMemberPre]
+      parts       : [information]
+      target      : [bodyBottom]
+      is_component: true
+    cautionAboutChangeAdminRequest:
+      template    : [community, cautionAboutChangeAdminRequest]
+      parts       : [information]
+      target      : [bodyBottom]
+      is_component: true
+    cautionAboutSubAdminRequest:
+      template    : [community, cautionAboutSubAdminRequest]
+      parts       : [information]
+      target      : [bodyBottom]
+      is_component: true
 
 smtProfileSuccess:
   layout: smtLayoutMember
