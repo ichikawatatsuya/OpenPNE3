@@ -20,7 +20,16 @@ class pushActions extends opJsonApiActions
   public function executeSearch(sfWebRequest $request)
   {
     $member = $this->getUser()->getMember();
-    $this->notifications = opNotificationCenter::getNotifications($member);
+    //$this->notifications = opNotificationCenter::getNotifications($member);
+    $tmpNotifications = opNotificationCenter::getNotifications($member);
+
+    $this->notifications = array();
+    $rootPath = sfContext::getInstance()->getRequest()->getRelativeUrlRoot();
+    foreach ($tmpNotifications as $notification)
+    {
+      $notification['url'] = $rootPath.$notification['url'];
+      $this->notifications[] = $notification;
+    }
 
     $this->setTemplate('array');
   }
