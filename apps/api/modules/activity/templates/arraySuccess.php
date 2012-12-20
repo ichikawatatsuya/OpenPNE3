@@ -11,6 +11,7 @@ foreach ($activityData as $activity)
   {
     $acEntity['replies'] = array();
 
+    $acEntity['repliesCount'] = $activity->getRepliesCount();
     foreach ($replies as $reply)
     {
       $acEntity['replies'][] = op_api_activity($reply);

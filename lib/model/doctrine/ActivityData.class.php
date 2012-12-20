@@ -30,7 +30,7 @@ class ActivityData extends BaseActivityData
     $query = $this->getTable()->createQuery('a')
       ->leftJoin('a.Member')
       ->addWhere('a.in_reply_to_activity_id = ?', $this->getId())
-      ->orderBy('a.id')
+      ->orderBy('a.id DESC')
       ->limit($limit);
 
     if (is_array($publicFlag))
@@ -43,5 +43,13 @@ class ActivityData extends BaseActivityData
     }
 
     return $query->execute();
+  }
+
+  public function getRepliesCount()
+  {
+    $query = $this->getTable()->createQuery('a')
+      ->leftJoin('a.Member')
+      ->addWhere('a.in_reply_to_activity_id = ?', $this->getId());
+    return $query->count();
   }
 }
