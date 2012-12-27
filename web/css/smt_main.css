@@ -104,7 +104,8 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .postform, .ncform, .menuform {
-  background: #555;
+  //background: #555;
+  background: #255980;
 }
 .white{
   color:#fff;
@@ -123,12 +124,12 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .postform {
-  padding-top: 4px;
-  padding-bottom: 52px;
+  padding-top: 10px;
+  padding-bottom: 8px;
   border-bottom: 6px solid #909090;
 }
 .postform .posttextarea {
-  margin: 4px 0;
+  margin: 8px 0;
 }
 .postform .posttextarea textarea {
   margin: 0;
@@ -178,6 +179,7 @@ input[type="checkbox"], input[type="radio"] {
   top: 2px;
   left: 90px;
   line-height: 10px;
+  width: 12px;
 }
 
 .tosaka_margin, .right_margin, .left_margin, .center_margin {
@@ -205,10 +207,16 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .gadget_header {
-  height: 20px;
-  background: #333;
-  color: #fff;
+  font-size: medium;
   text-align: center;
+  padding-top: 2px;
+  
+  margin: 10px 0!important;
+  height: 30px;
+  background: transparent url(../opSkinBasicPlugin/images/bg_parts_heading_440.gif) no-repeat 0 0;
+  background-size: 320px 30px;
+  line-height: 26px;
+  color: #FFFFFF;
 }
 
 body {
@@ -320,6 +328,7 @@ hr.white2 {
 
 input.btn320[type="submit"] {
   width: 320px;
+  height: 35px;
 }
 
 * {
@@ -384,7 +393,7 @@ table td {
 
 .navbar .brand
 {
-  padding: 4px 20px 8px;
+  padding: 8px 8px 8px;
 }
 
 /*----------------------------------------------
@@ -423,9 +432,7 @@ table td {
 .navbar .brand {
   padding-left: 10px;
   padding-right: 10px;
-  margin: 0 0 0 -5px;
-  min-width: 90px;
-  max-width: 100px;
+  margin: 0 50px 0 5px;
   overflow: hidden;
   text-align: center;
 }

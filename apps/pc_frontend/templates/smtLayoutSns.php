@@ -31,6 +31,7 @@ var openpne = '.$json.';
 <?php op_smt_use_javascript('smt_notify') ?>
 <?php op_smt_use_javascript('smt_tosaka') ?>
 <?php op_smt_use_javascript('smt_menu') ?>
+<?php op_smt_use_javascript('jquery.upload.min.js') ?>
 <?php op_smt_include_javascripts() ?>
 </head>
 <body id="<?php printf('page_%s_%s', $this->getModuleName(), $this->getActionName()) ?>" class="<?php echo opToolkit::isSecurePage() ? 'secure_page' : 'insecure_page' ?>">
