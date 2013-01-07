@@ -79,11 +79,11 @@
   <div class="row">
     <input id="timeline-submit-upload" type="file" name="timeline-submit-upload" enctype="multipart/form-data"> <?php echo $fileMaxSize ?>
     <?php if ($community): ?>
-    <button id="tosaka_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span12 btn small btn-primary"><?php echo __('%post_activity%') ?></button>
+    <button id="timeline_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span12 btn small btn-primary"><?php echo __('%post_activity%') ?></button>
     <?php else: ?>
-    <button id="tosaka_postform_submit" class="span12 btn small btn-primary"><?php echo __('%post_activity%') ?></button>
+    <button id="timeline_postform_submit" class="span12 btn small btn-primary"><?php echo __('%post_activity%') ?></button>
     <?php endif; ?>
-    <span id="timeline-upload-photo-button" class="btn"><i class="icon-camera"></i></span>
+    <span id="timeline-upload-photo-button" class="btn"><span class="icon-camera"></span></span>
     <span id="photo-file-name"></span>
     <div class="center hide" id="timelinePostLoading"><?php echo op_image_tag('ajax-loader.gif') ?></div>
   </div>
