@@ -60,6 +60,7 @@
   {{/if}}
 </script>
 
+<?php $publicFlags = Doctrine::getTable('ActivityData')->getPublicFlags(); //コードを一箇所にするためにviewに定義している ?>
 
 <!-- POSTFORM TMPL -->
 <div class="postform hide toggle1">
@@ -75,15 +76,21 @@
   </div>
   <div class="row posttextarea">
     <textarea id="tosaka_postform_body" class="span12" rows="4" placeholder="<?php echo __('What are you doing now?') ?>"></textarea>
+    <div id="timeline-submit-error" style="color:red"></div> <?php //エラーメッセージのところ ?>
   </div>
   <div class="row">
-    <input id="timeline-submit-upload" type="file" name="timeline-submit-upload" enctype="multipart/form-data"> <?php echo $fileMaxSize ?>
+    <input id="timeline-submit-upload" type="file" name="timeline-submit-upload" enctype="multipart/form-data">
     <?php if ($community): ?>
     <button id="timeline_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span12 btn small btn-primary"><?php echo __('%post_activity%') ?></button>
     <?php else: ?>
     <button id="timeline_postform_submit" class="span12 btn small btn-primary"><?php echo __('%post_activity%') ?></button>
     <?php endif; ?>
     <span id="timeline-upload-photo-button" class="btn"><span class="icon-camera"></span></span>
+    <select id="timeline-public-flag">
+          <?php foreach ($publicFlags as $value => $text): ?>
+            <option value="<?php echo $value ?>"><?php echo __($text) ?></option>
+          <?php endforeach; ?>
+    </select>
     <span id="photo-file-name"></span>
     <div class="center hide" id="timelinePostLoading"><?php echo op_image_tag('ajax-loader.gif') ?></div>
   </div>
