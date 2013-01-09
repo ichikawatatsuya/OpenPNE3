@@ -104,7 +104,8 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .postform, .ncform, .menuform {
-  background: #555;
+  //background: #555;
+  background: #255980;
 }
 .white{
   color:#fff;

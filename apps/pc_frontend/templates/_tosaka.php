@@ -82,10 +82,10 @@
     <input id="timeline-submit-upload" type="file" name="timeline-submit-upload" enctype="multipart/form-data" class="timeline-mode" style="display: none;">
     <?php if ($community): ?>
     <button id="tosaka_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
-    <button id="timeline_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span4 btn small btn-primary timeline-mode" style="display: none;" disabled="disabled"><?php echo __('%post_activity%') ?></button>
+    <button id="timeline_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span4 btn small btn-primary timeline-mode" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
     <?php else: ?>
     <button id="tosaka_postform_submit" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
-    <button id="timeline_postform_submit" class="span4 btn small btn-primary timeline-mode" style="display: none;" disabled="disabled"><?php echo __('%post_activity%') ?></button>
+    <button id="timeline_postform_submit" class="span4 btn small btn-primary timeline-mode" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
     <?php endif; ?>
     <span id="timeline-upload-photo-button" class="btn timeline-mode" style="display: none;"><span class="icon-camera"></span></span>
     <span id="photo-file-name"></span>
