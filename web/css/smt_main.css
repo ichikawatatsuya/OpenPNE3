@@ -124,11 +124,12 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .postform {
-  padding-top: 4px;
+  padding-top: 10px;
+  padding-bottom: 8px;
   border-bottom: 6px solid #909090;
 }
 .postform .posttextarea {
-  margin: 4px 0;
+  margin: 8px 0;
 }
 .postform .posttextarea textarea {
   margin: 0;
@@ -434,8 +435,6 @@ table td {
   padding-left: 10px;
   padding-right: 10px;
   margin: 0 50px 0 5px;
-  //min-width: 90px;
-  //max-width: 100px;
   overflow: hidden;
   text-align: center;
 }

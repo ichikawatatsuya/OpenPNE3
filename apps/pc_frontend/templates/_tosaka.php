@@ -75,25 +75,30 @@
     </div>
   </div>
   <div class="row posttextarea">
-    <textarea id="tosaka_postform_body" class="span12" rows="4" placeholder="<?php echo __('What are you doing now?') ?>"></textarea>
+    <textarea id="tosaka_postform_body" class="span12" rows="4" tabindex="1" placeholder="<?php echo __('What are you doing now?') ?>"></textarea>
   </div>
   <div class="row">
     <div id="timeline-submit-error" class="timeline-mode" style="display: none;"></div>
     <input id="timeline-submit-upload" type="file" name="timeline-submit-upload" enctype="multipart/form-data" class="timeline-mode" style="display: none;">
-    <?php if ($community): ?>
-    <button id="tosaka_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
-    <button id="timeline_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span4 btn small btn-primary timeline-mode" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
-    <?php else: ?>
-    <button id="tosaka_postform_submit" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
-    <button id="timeline_postform_submit" class="span4 btn small btn-primary timeline-mode" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
-    <?php endif; ?>
     <span id="timeline-upload-photo-button" class="btn timeline-mode" style="display: none;"><span class="icon-camera"></span></span>
     <span id="photo-file-name"></span>
+    <?php if (!$community): ?>
     <select id="timeline-public-flag" class="timeline-mode" style="display: none;">
           <?php foreach ($publicFlags as $value => $text): ?>
             <option value="<?php echo $value ?>" style="display: none;" class="timeline-mode"><?php echo __($text) ?></option>
           <?php endforeach; ?>
     </select>
+    <?php else: ?>
+    <span class="timeline-community-name">このコミュニティに</span>
+    <input type="hidden" id="timeline-public-flag">
+    <?php endif; ?>
+    <?php if ($community): ?>
+    <button id="tosaka_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
+    <button id="timeline_postform_submit" data-community-id="<?php echo $community->getId() ?>" class="span4 btn small btn-primary timeline-mode" tabindex="2" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
+    <?php else: ?>
+    <button id="tosaka_postform_submit" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
+    <button id="timeline_postform_submit" class="span4 btn small btn-primary timeline-mode" tabindex="2" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
+    <?php endif; ?>
     <div class="center hide" id="timelinePostLoading" class="timeline-mode" style="display: none;"><?php echo op_image_tag('ajax-loader.gif') ?></div>
   </div>
 </div>
@@ -107,9 +112,9 @@
     <div class="container">
       <div class="nav-collapse toggle1">
         <div class="row">
-          <div class="span11 white font14 toggle1_close">MENU</div>
+          <div class="span10 white font14 toggle1_close">MENU</div>
           <div class="span1">
-            <?php echo op_image_tag('UPARROW', array('class' => 'toggle1_close')) ?>
+            <?php echo op_image_tag('UPARROW', array('class' => 'toggle1_close', 'style' => 'padding-left: 22px;')) ?>
           </div>
         </div>
         <?php include_component('default', 'smtMenu') ?>

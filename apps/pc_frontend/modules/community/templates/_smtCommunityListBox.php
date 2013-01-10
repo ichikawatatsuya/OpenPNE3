@@ -2,13 +2,6 @@
   <div class="gadget_header span12">コミュニティ情報</div>
 </div>
 <div class="row">
-  <div class="span12">
-    <hr class="toumei" />
-    <?php echo op_image_tag_sf_image($community->getImageFileName(), array('size' => '320x320', 'format' => 'jpg')) ?>
-    <hr class="toumei" />
-  </div>
-</div>
-<div class="row">
 <table class="table table-striped span12">
 <tbody>
 <tr>
