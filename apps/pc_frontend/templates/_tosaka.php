@@ -114,7 +114,11 @@
         </div>
         <?php include_component('default', 'smtMenu') ?>
       </div>
-      <a class="btn btn-navbar brand" data-toggle="collapse" data-target=".nav-collapse"><?php echo $op_config['sns_name'] ?></a>
+      <a class="btn btn-navbar brand" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
       <?php if (opToolkit::isSecurePage()): ?>
       <div id="notification_center" class="center">
         <?php echo op_image_tag('NOTIFY_CENTER.png', array('height' => '32', 'class' => 'ncbutton')) ?>

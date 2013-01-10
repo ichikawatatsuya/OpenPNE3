@@ -178,6 +178,7 @@ input[type="checkbox"], input[type="radio"] {
   top: 2px;
   left: 90px;
   line-height: 10px;
+  width: 12px;
 }
 
 .tosaka_margin, .right_margin, .left_margin, .center_margin {
@@ -393,7 +394,7 @@ table td {
 
 .navbar .brand
 {
-  padding: 4px 20px 8px;
+  padding: 8px 8px 8px;
 }
 
 /*----------------------------------------------
@@ -432,9 +433,9 @@ table td {
 .navbar .brand {
   padding-left: 10px;
   padding-right: 10px;
-  margin: 0 0 0 -5px;
-  min-width: 90px;
-  max-width: 100px;
+  margin: 0 50px 0 5px;
+  //min-width: 90px;
+  //max-width: 100px;
   overflow: hidden;
   text-align: center;
 }
