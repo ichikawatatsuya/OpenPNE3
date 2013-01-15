@@ -81,7 +81,6 @@
     <div id="timeline-submit-error" class="timeline-mode" style="display: none;"></div>
     <input id="timeline-submit-upload" type="file" name="timeline-submit-upload" enctype="multipart/form-data" class="timeline-mode" style="display: none;">
     <span id="timeline-upload-photo-button" class="btn timeline-mode" style="display: none;"><span class="icon-camera"></span></span>
-    <span id="photo-file-name"></span>
     <?php if (!$community): ?>
     <select id="timeline-public-flag" class="timeline-mode" style="display: none;">
           <?php foreach ($publicFlags as $value => $text): ?>
@@ -89,7 +88,7 @@
           <?php endforeach; ?>
     </select>
     <?php else: ?>
-    <span class="timeline-community-name">このコミュニティに</span>
+    <span class="timeline-community-name" style="display: none" class="timeline-mode">このコミュニティに</span>
     <input type="hidden" id="timeline-public-flag">
     <?php endif; ?>
     <?php if ($community): ?>
@@ -99,6 +98,10 @@
     <button id="tosaka_postform_submit" class="span12 btn small btn-primary basic-mode"><?php echo __('%post_activity%') ?></button>
     <button id="timeline_postform_submit" class="span4 btn small btn-primary timeline-mode" tabindex="2" disabled="disabled" style="display: none;"><?php echo __('%post_activity%') ?></button>
     <?php endif; ?>
+    <div class="photo-info" style="display: none;">
+      <span id="photo-remove"><span class="icon-remove icon-white"></span></span>
+      <span id="photo-file-name"></span>
+    </div>
     <div class="center hide" id="timelinePostLoading" class="timeline-mode" style="display: none;"><?php echo op_image_tag('ajax-loader.gif') ?></div>
   </div>
 </div>
