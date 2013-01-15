@@ -12,6 +12,13 @@ $(document).ready(function(){
           $('.friend-accept', $pushHtml).friendLink({ buttonElement: '.friend-notify-button', ncfriendloadingElement: '#ncfriendloading', ncfriendresultmessageElement: '#ncfriendresultmessage', });
           $('.friend-reject', $pushHtml).friendUnlink({ buttonElement: '.friend-notify-button', ncfriendloadingElement: '#ncfriendloading', ncfriendresultmessageElement: '#ncfriendresultmessage', })
           $("#pushList").html($pushHtml);
+      
+          $('.nclink').each( function() {
+            var notifyId = $(this).attr('data-notify-id');
+            $.getJSON( openpne.apiBase + 'push/read.json' , { 'id': notifyId, 'apiKey': openpne.apiKey }, function(d){
+              $('#nc_count3').hide();
+            });
+          });
         }else{
           alert(json.message);
         }
