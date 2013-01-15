@@ -37,7 +37,7 @@ var openpne = '.json_encode($jsonData).';
 <?php include_partial('global/tosaka') ?>
 <div id="face" class="row">
   <div class="span2">
-    <?php echo op_image_tag_sf_image($sf_user->getMember()->getImageFileName(), array('size' => '48x48')) ?>
+    <?php echo op_image_tag_sf_image($sf_user->getMember()->getImageFileName(), array('size' => '48x48', 'class' => 'rad10')) ?>
   </div>
   <div class="span8">
     <div class="row face-name"><?php echo $sf_user->getMember()->getName() ?></div>

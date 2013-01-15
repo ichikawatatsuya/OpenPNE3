@@ -37,7 +37,7 @@ var openpne = '.json_encode($jsonData).';
 <div id="face" class="row">
   <?php if (isset($op_layout['member'])): ?>
   <div class="span2">
-    <?php echo op_image_tag_sf_image($op_layout['member']->getImageFileName(), array('size' => '48x48')) ?>
+    <?php echo op_image_tag_sf_image($op_layout['member']->getImageFileName(), array('size' => '48x48', 'class' => 'rad10')) ?>
   </div>
   <div class="span8">
     <div class="row face-name"><?php echo $op_layout['member']->getName() ?></div>
