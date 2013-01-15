@@ -25,6 +25,12 @@ $(document).ready(function(){
               $('#notificationCenterLoading').hide();
               $('#notificationCenterError').hide();
               $('#notificationCenterDetail').append($pushHtml);
+              $('.nclink').each( function() {
+                var notifyId = $(this).attr('data-notify-id');
+                $.getJSON( openpne.apiBase + 'push/read.json' , { 'id': notifyId, 'apiKey': openpne.apiKey }, function(d){
+                  $('#nc_icon3').hide();
+                });
+              });
             }else{
               $('#notificationCenterLoading').hide();
               $('#notificationCenterError').show();
@@ -33,7 +39,6 @@ $(document).ready(function(){
             $('#notificationCenterLoading').hide();
             $('#notificationCenterError').show();
           }
-          $('.nclink').pushLink();
         });
         is_read_flag = true;
       }
