@@ -328,6 +328,7 @@ hr.white2 {
 
 input.btn320[type="submit"] {
   width: 320px;
+  height: 35px;
 }
 
 * {
