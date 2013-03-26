@@ -15,3 +15,34 @@
 </tr>
 </table>
 </form>
+
+<?php if ($pager->getNbResults()): ?>
+<h3><?php echo __('Send history') ?></h3>
+<?php op_include_pager_navigation($pager, 'member/invite?page=%d', array('use_current_query_string' => true)) ?>
+<table>
+<tr>
+<th>
+<?php echo __('Send situation') ?>
+</th>
+<th>
+<?php echo __('Email') ?>
+</th>
+<th>
+<?php echo __('Send date') ?>
+</th>
+</tr>
+<?php foreach ($pager->getResults() as $value): ?>
+<tr>
+<td>
+<?php echo __('Send completion') ?>
+</td>
+<td>
+<?php echo $value['value'] ?>
+</td>
+<td>
+<?php echo $value['created_at'] ?>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>

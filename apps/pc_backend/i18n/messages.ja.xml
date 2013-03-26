@@ -1290,6 +1290,22 @@
         <target>送信</target>
       </trans-unit>
       <trans-unit id="">
+        <source>Send history</source>
+        <target>送信履歴</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Send situation</source>
+        <target>送信状況</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Send completion</source>
+        <target>送信完了</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Send date</source>
+        <target>送信日時</target>
+      </trans-unit>
+      <trans-unit id="">
         <source>Can't unsubscribe the member has ID = 1</source>
         <target>IDが1のメンバーは退会することができません。</target>
       </trans-unit>

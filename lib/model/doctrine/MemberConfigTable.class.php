@@ -37,6 +37,22 @@ class MemberConfigTable extends opAccessControlDoctrineTable
       ->execute();
   }
 
+  public function getAdminInvitedMemberIds()
+  {
+    $adminInviteds = $this->createQuery()
+      ->where('name = ?', 'is_admin_invited')
+      ->andWhere('value = ?', true)
+      ->execute();
+
+    $ids = array();
+    foreach ($adminInviteds as $line)
+    {
+      $ids[] = $line['member_id'];
+    }
+
+    return $ids;
+  }
+
   public function deleteDuplicatedPre($memberId, $name, $value)
   {
     $memberConfig = $this->retrieveByNameAndMemberId($name.'_pre', $memberId);
