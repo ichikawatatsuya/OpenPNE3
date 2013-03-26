@@ -107,7 +107,7 @@ class memberActions extends sfActions
       ->andWhereIn('member_id', $adminInvitedMemberIds)
       ->orderBy('id desc');
 
-    $this->pager = new sfDoctrinePager('MemberConfig', 20);
+    $this->pager = new sfDoctrinePager('MemberConfig', 15);
     $this->pager->setQuery($query);
 
     $this->pager->setPage($request->getParameter('page', 1));
