@@ -272,4 +272,39 @@ class communityActions extends sfActions
     }
     return sfView::NONE;
   }
+
+  public function executeChangeAdmin(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->hasParameter('id'));
+    $this->community = Doctrine::getTable('Community')->find($request->getParameter('id'));
+    $this->forward404Unless($this->community);
+
+    $this->communityMemberPosition = Doctrine::getTable('CommunityMemberPosition')
+      ->findOneByCommunityIdAndName($request->getParameter('id'), 'admin');
+    $this->forward404Unless($this->communityMemberPosition);
+
+    $this->form = new CommunityMemberPositionForm($this->communityMemberPosition);
+    if ($request->isMethod(sfWebRequest::POST))
+    {
+      $request->checkCSRFProtection();
+      $this->forward404Unless($request->getParameter('community_member_position'));
+
+      $changeMemberId = $request->getParameter('community_member_position');
+
+      $result = Doctrine::getTable('CommunityMemberPosition')
+        ->changeAdminByMemberIdAndCommunityId($changeMemberId['member_id'], $this->community->getId(), $this->community->getAdminMember()->getId());
+      if (!$result)
+      {
+        $this->getUser()->setFlash('error', 'Failed to save.');
+
+        return sfView::INPUT;
+      }
+
+      $this->getUser()->setFlash('notice', 'changed.');
+
+      $this->redirect('community/list');
+    }
+
+    return sfView::INPUT;
+  }
 }

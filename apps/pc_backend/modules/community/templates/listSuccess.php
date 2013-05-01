@@ -31,6 +31,7 @@
 <?php else: ?>
 <?php $moreInfo[] = link_to(__('Remove this %community% from the default'), 'community/removeDefaultCommunity?id='.$community->getId()) ?>
 <?php endif; ?>
+<?php $moreInfo[] = link_to(__('%Community% change administrator'), 'community/changeAdmin?id='.$community->getId()) ?>
 <?php include_partial('community/communityInfo', array(
   'community' => $community, 
   'moreInfo' => $moreInfo,

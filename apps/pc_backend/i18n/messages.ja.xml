@@ -1469,6 +1469,18 @@
         <source>%Community% Sub Administrator</source>
         <target>%Community%副管理者</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>%Community% change administrator</source>
+        <target>%Community%管理者を変更する</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Enter the administrator ID of the %Community% to change.</source>
+        <target>変更する%Community%管理者のIDを入力してください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>changed.</source>
+        <target>変更しました。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -31,4 +31,18 @@ class CommunityMemberPositionTable extends Doctrine_Table
     }
     return $results;
   }
+
+  public function changeAdminByMemberIdAndCommunityId($memberId, $communityId, $fromMemberId)
+  {
+    try
+    {
+      Doctrine::getTable('CommunityMember')->requestAddPosition($memberId, $communityId, $fromMemberId, 'admin');
+      Doctrine::getTable('CommunityMember')->changeAdmin($memberId, $communityId);
+      return true;
+    }
+    catch (Exception $e)
+    {
+      return false;
+    }
+  }
 }
