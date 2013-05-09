@@ -28,16 +28,5 @@ class CommunityChangeAdminForm extends BaseForm
     $this->setValidators(array(
       'communityAdmin' => new sfValidatorRegex(array('pattern' => '/^[0-9]+$/')),
     ));
-
-    $this->widgetSchema->setNameFormat('image[%s]');
-  }
-
-  public function save()
-  {
-    $file = new File();
-    $file->setFromValidatedFile($this->getValue('file'));
-    $file->setName(sprintf('admin_%s_%d', $this->getValue('imageName'), time()));
-
-    return $file->save();
   }
 }

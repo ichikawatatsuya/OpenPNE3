@@ -36,7 +36,11 @@ class CommunityMemberPositionTable extends Doctrine_Table
   {
     try
     {
-      Doctrine::getTable('CommunityMember')->requestAddPosition($memberId, $communityId, $fromMemberId, 'admin');
+      $communityMember = Doctrine::getTable('CommunityMember')->retrieveByMemberIdAndCommunityId($memberId, $communityId);
+      if ($communityMember && !$communityMember->hasPosition('admin_confirm'))
+      {
+        Doctrine::getTable('CommunityMember')->requestAddPosition($memberId, $communityId, $fromMemberId, 'admin');
+      }
       Doctrine::getTable('CommunityMember')->changeAdmin($memberId, $communityId);
       return true;
     }
